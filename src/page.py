@@ -132,6 +132,7 @@ class Page:
                       orientation=self.colour,
                       arrows=arrows,
                       check=check,
+					  coordinates=False,
                       colors={
                           "square light": "#ebecd0",
                           "square dark": "#779556",
