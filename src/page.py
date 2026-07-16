@@ -128,10 +128,16 @@ class Page:
 		for square, side in self.fills.items():
 			arrows.append(Arrow(tail=square, head=square, color=side))
 		svg = chess.svg.board(self.board,
-		                      lastmove=lastmove,
-		                      orientation=self.colour,
-		                      arrows=arrows,
-		                      check=check)
+                      lastmove=lastmove,
+                      orientation=self.colour,
+                      arrows=arrows,
+                      check=check,
+                      colors={
+                          "square light": "#ebecd0",
+                          "square dark": "#779556",
+                          "square light lastmove": "#f5f682",
+                          "square dark lastmove": "#bbcb2b",
+                      })
 
 		with open(path, 'w', encoding='cp1252') as file:
 			file.write(svg)
