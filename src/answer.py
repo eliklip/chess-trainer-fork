@@ -26,11 +26,12 @@ class Answer(Page):
 		self.set_board(board)
 
 	def lichess_link(self) -> str | None:
-    	if self.board is None:
-        	return None
-    	fen = self.board.fen().replace(" ", "_")
-    	return f"https://lichess.org/analysis/{fen}"
-	
+		if self.board is None:
+			return None
+
+		fen = self.board.fen().replace(" ", "_")
+		return f"https://lichess.org/analysis/{fen}"
+
 	def extra_html(self, note_id: int) -> str:
 		rendered = super().extra_html(note_id)
 		link = self.lichess_link()
